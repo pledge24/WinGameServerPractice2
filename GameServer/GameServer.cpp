@@ -51,7 +51,7 @@ int main()
 			});
 	}
 
-	// Main Thread
+	// Main Thread 
 	DoWorkerJob(service);
 
 	GThreadManager->Join();

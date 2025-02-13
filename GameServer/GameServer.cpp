@@ -8,6 +8,7 @@
 //#include "ClientPacketHandler.h"
 #include <tchar.h>
 #include "Job.h"
+#include "Protocol.pb.h"
 
 enum
 {
@@ -51,8 +52,18 @@ int main()
 			});
 	}
 
-	// Main Thread 
-	DoWorkerJob(service);
+	// Main Thread
+	//DoWorkerJob(service);
+
+	while (true)
+	{
+		//Protocol::S_CHAT pkt;
+		//pkt.set_msg("HelloWorld");
+		//auto sendBuffer = ServerPacketHandler::MakeSendBuffer(pkt);
+
+		//GSessionManager.Broadcast(sendBuffer);
+		this_thread::sleep_for(1s);
+	}
 
 	GThreadManager->Join();
 }
